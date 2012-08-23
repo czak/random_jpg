@@ -1,5 +1,7 @@
 # RandomJpg
 
+[![Build Status](https://secure.travis-ci.org/czak/random_jpg.png?branch=master)](http://travis-ci.org/czak/random_jpg)
+
 TODO: Write a gem description
 
 ## Installation
