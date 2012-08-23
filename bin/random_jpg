@@ -4,4 +4,10 @@ $LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib') unless $LOAD_PATH.include
 require "rubygems"
 require "random_jpg"
 
-RandomJpg::Runner.run(ARGV)
+begin
+  RandomJpg::Runner.new(ARGV).run
+  exit 0
+rescue RandomJpg::Error => e
+  STDERR.puts e.message
+  exit 1
+end
