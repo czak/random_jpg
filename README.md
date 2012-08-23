@@ -1,6 +1,6 @@
-# RandomJpg
+# random_jpg
 
-RandomJpg is a tool for easy downloading random images for use in scripts, application test data etc.
+random_jpg is a tool for easy downloading **random images from the web** for use in scripts, application test data etc.
 It runs silently in the background feeding random [Flickr](http://www.flickr.com) images to a [named pipe](http://en.wikipedia.org/wiki/Named_pipe) at a specified location, by default `/tmp/random.jpg`. By using a constant location, this simplifies a number of tasks related to downloading images.
 
 ## Installation
@@ -14,7 +14,7 @@ Install using:
 [![Build Status](https://secure.travis-ci.org/czak/random_jpg.png?branch=master)](http://travis-ci.org/czak/random_jpg)
 
 
-RandomJpg is verified to run under:
+random_jpg is verified to run under:
 
 * Ruby 1.9.2
 * Ruby 1.9.3
@@ -53,4 +53,4 @@ For full usage info, run:
 
 ## Info
 
-RandomJpg &copy; 2012 Łukasz Adamczak, read LICENSE file for details.
+random_jpg &copy; 2012 [Łukasz Adamczak](http://czak.pl), read LICENSE file for details.
