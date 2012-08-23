@@ -7,8 +7,9 @@ module RandomJpg
     end
 
     def initialize(args = [])
-      @path = "/tmp/random.jpg"
+      @path   = "/tmp/random.jpg"
       @daemon = false
+      @loader = Loader.new
 
       opts = OptionParser.new
       opts.banner = "Usage: random_jpg [options]\n\n"
@@ -30,7 +31,7 @@ module RandomJpg
       create_pipe(@path)
       Process.daemon if @daemon
       trap("SIGINT") { File.unlink(@path); exit }
-      loop { sleep 10 }
+      loop { @loader.feed(@path) }
     end
 
     def create_pipe(path)
