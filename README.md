@@ -47,6 +47,10 @@ end
 
 On each run, a new image will be downloaded and served.
 
+For full usage info, run:
+
+    $ random_jpg -h
+
 ## Info
 
 RandomJpg &copy; 2012 Łukasz Adamczak, read LICENSE file for details.
