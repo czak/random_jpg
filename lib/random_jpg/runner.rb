@@ -37,10 +37,10 @@ module RandomJpg
     end
 
     def run
-      create_pipe(@path, @force)
-      Process.daemon if @daemon
-      trap("SIGINT") { File.unlink(@path); exit }
-      loop { @loader.feed(@path) }
+      create_pipe(path, force)
+      Process.daemon if daemon
+      trap("SIGINT") { File.unlink(path); exit }
+      loop { loader.feed(path) }
     end
 
     def create_pipe(path, force = false)
