@@ -2,12 +2,17 @@ require "optparse"
 
 module RandomJpg
   class Runner
+    attr_reader :path, :daemon, :force, :loader
+
     def initialize(args = [])
       @path   = "/tmp/random.jpg"
       @daemon = false
       @force  = false
-      @loader = Loader.new
+      @loader = Loader::Flickr.new
+      parse_options(args)
+    end
 
+    def parse_options(args)
       OptionParser.new do |opts|
         opts.banner = "Usage: random_jpg [options]"
         opts.separator ""
@@ -20,6 +25,9 @@ module RandomJpg
         end
         opts.on("-f", "--force", "Force overwrite if a file exists at given path") do
           @force = true
+        end
+        opts.on("-l LOADER", [:flickr, :imgur], "Image source (flickr [default], imgur)") do |loader|
+          @loader = Loader::Imgur.new if loader == :imgur
         end
         opts.on_tail("-h", "--help", "Show this message") do
           puts opts

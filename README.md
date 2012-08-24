@@ -1,7 +1,7 @@
 # random_jpg
 
 random_jpg is a tool for easy downloading **random images from the web** for use in scripts, application test data etc.
-It runs silently in the background feeding random [Flickr](http://www.flickr.com) images to a [named pipe](http://en.wikipedia.org/wiki/Named_pipe) at a specified location, by default `/tmp/random.jpg`. By using a constant location, this simplifies a number of tasks related to downloading images.
+It runs silently in the background feeding random images to a [named pipe](http://en.wikipedia.org/wiki/Named_pipe) at a specified location, by default `/tmp/random.jpg`. By using a constant location, this simplifies a number of tasks related to downloading images.
 
 ## Installation
 
@@ -50,6 +50,13 @@ On each run, a new image will be downloaded and served.
 For full usage info, run:
 
     $ random_jpg -h
+
+## Image sources
+
+Image source can be chosen using `-l LOADER`. Available options:
+
+* `flickr` (default)
+* `imgur` (not recommended for production use ;)
 
 ## Info
 

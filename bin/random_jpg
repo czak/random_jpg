@@ -7,7 +7,7 @@ require "random_jpg"
 begin
   RandomJpg::Runner.new(ARGV).run
   exit 0
-rescue RandomJpg::Error => e
+rescue RandomJpg::Error, OptionParser::InvalidArgument, OptionParser::MissingArgument => e
   STDERR.puts e.message
   exit 1
 end
